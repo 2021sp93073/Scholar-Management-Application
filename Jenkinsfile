@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Deploy - Staging') {
             steps {
-                  echo 'Deploy - Staging'
+                  echo 'Deploy - Staging '
                    bat 'cf target -s Test'
                    bat 'cf push'
             }
@@ -23,13 +23,14 @@ pipeline{
 
         stage('Sanity check') {
             steps {
+                echo 'User Action is Required'
                 input "Does the staging environment look ok?"
             }
         }
 
         stage('Deploy - Production') {
             steps {
-                echo 'Deploy - Production'
+                echo 'Deploy - Production '
                 bat 'cf target -s Production'
                 bat 'cf push'
             }
