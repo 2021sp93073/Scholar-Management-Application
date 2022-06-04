@@ -18,6 +18,7 @@ public class ScholarController {
     ScholarService scholarService;
     @PostMapping("")
     public void saveScholar(@RequestBody ScholarRequest scholarRequest)  {
+        //Adding scholar entry
         scholarService.create(scholarRequest);
     }
     @GetMapping("")
